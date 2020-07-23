@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/">
               <Homepage />
             </Route>
-            <Route path="/product">
+            <Route path="/product:id">
               <ProductPage />
             </Route>
           </Switch>
