@@ -4,6 +4,8 @@ import { Client as Styletron } from "styletron-engine-atomic";
 
 import Homepage from "./pages/Homepage";
 import ProductPage from "./pages/ProductPage";
+import Navbar from './components/Navbar'
+import Cart from './components/Cart'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -20,6 +22,8 @@ function App() {
     <ShopProvider>
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
         <Router>
+          <Navbar />
+          <Cart />
           <Switch>
             <Route exact path="/">
               <Homepage />
