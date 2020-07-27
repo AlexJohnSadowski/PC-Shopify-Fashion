@@ -1,11 +1,13 @@
 import React from "react";
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
+import './App.scss'
 
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-import Navbar from './components/Navbar'
 import Cart from './components/Cart'
+import Navbar from './components/Navbar'
+import ProductsPage from './pages/ProductsPage'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -25,8 +27,11 @@ function App() {
           <Navbar />
           <Cart />
           <Switch>
-            <Route exact path="/">
+          <Route exact path="/">
               <Homepage />
+            </Route>
+            <Route path="/products">
+              <ProductsPage />
             </Route>
             <Route path="/product/:id">
               <ProductPage />
