@@ -11,13 +11,13 @@ const Cart = () => {
             <Modal isOpen={isCartOpen} onClose={closeCart}>
                 <Container d="flex" flexDir="column" h='20'>
                     <Row justify="space-between" border={{ b: '1px solid' }} p="0.7rem" borderColor="gray300">
-                        <Text tag="h1" textColor="black500" textSize="paragraph" hoverTextColor="black700" transition="0.3s">Bag</Text>
-                        <Anchor onClick={() => closeCart()} ><Icon name="Cross" color="black500" /></Anchor>
+                        <Text tag="h1" textColor="#002fa7" textSize="paragraph" hoverTextColor="#002fa7" transition="0.3s">Bag</Text>
+                        <Anchor onClick={() => closeCart()} ><Icon name="Cross" color="#002fa7" /></Anchor>
                     </Row>
                     <Row flexGrow="2" p="0.7rem" overflow="auto" flexWrap="nowrap" flexDir="column">
                         {checkout.lineItems.length < 1 ?
                             <Row>
-                                <Col><Text tag="h1" textColor="black500" textSize="paragraph" hoverTextColor="black700" transition="0.3s">Cart Is Empty</Text></Col>
+                                <Col><Text tag="h1" textColor="#002fa7" textSize="paragraph" hoverTextColor="#002fa7" transition="0.3s">Cart Is Empty</Text></Col>
                             </Row>
                             :
                             <>
@@ -41,7 +41,7 @@ const Cart = () => {
                     </Row>
                     <Row border={{ t: '1px solid' }} p="0.7rem" borderColor="gray300">
                         <Anchor w="100%" href={checkout.webUrl} target="_blank" rel="noopener noreferrer">
-                            <Button w="100%" rounded="0" bg="black500" shadow="2" hoverShadow="3" m={{ t: '1rem' }}>
+                            <Button w="100%" rounded="0" bg="#002fa7" shadow="2" hoverShadow="3" m={{ t: '1rem' }}>
                                 Checkout
                             </Button>
                         </Anchor>

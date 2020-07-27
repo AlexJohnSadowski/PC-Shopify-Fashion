@@ -19,7 +19,7 @@ const ProductsPage = () => {
             <Link to={`/product/${product.id}`}>
                 <div className="product-image"><img src={product.images[0].src} /></div>
                 <div className="product-title">{product.title}</div>
-                <div className="product-price">{product.variants[0].price}</div>
+                <div className="product-price">{product.variants[0].price} zł</div>
             </Link>
           </div>
         ))}
