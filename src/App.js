@@ -8,6 +8,7 @@ import ProductPage from "./pages/ProductPage";
 import Cart from './components/Cart'
 import Navbar from './components/Navbar'
 import ProductsPage from './pages/ProductsPage'
+import About from './components/About'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -29,6 +30,7 @@ function App() {
           <Switch>
           <Route exact path="/">
               <Homepage />
+              <About />
             </Route>
             <Route path="/products">
               <ProductsPage />

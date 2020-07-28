@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
+
+$primary-color: rgb(241, 234, 234);
+$klein-blue-color: #002fa7;
+$dirty-red-color:rgb(241, 60, 60);
 
 html,
 body {
   box-sizing: border-box;
-  margin:0;
+  margin: 0;
+  background-color: $primary-color;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
 }
 
-a{
-    text-decoration:none ;
+a {
+  text-decoration: none;
 }
 
 nav a {
@@ -25,7 +32,7 @@ nav a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #002fa7;
+  background: $klein-blue-color;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -34,7 +41,6 @@ nav a:hover:after {
   left: 0;
 }
 
-
 /* NAVBAR */
 
 nav {
@@ -42,52 +48,59 @@ nav {
   grid-template-columns: repeat(auto-fit, minmax(35vh, auto));
   justify-items: center;
   padding: 1rem;
+  background-color: $primary-color;
 }
 
 .logo {
   font-size: 5vh;
   font-family: "Nothing You Could Do", "Times New Roman";
-  color: #000000;
-  font-weight:700
+  color: $dirty-red-color;
+  font-weight: 700;
+}
+
+.dot {
+  color: $dirty-red-color
 }
 
 .shop {
   font-size: 5vh;
-  font-family: "Times New Roman";
-  font-weight: 600;
-  color: #000000;
+  font-family: "Finger Paint", "Times New Roman";
+  font-weight: 400;
+  color: $klein-blue-color;
+  cursor: pointer;
 }
 
+/* BG Homepage */
+
 .bg-container {
-  height: 80vh;
+  height: 90vh;
 }
 
 .bg-img {
-  background-color:#002fa7;
+  background-color: $klein-blue-color;
   background-size: cover;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
 }
 
 .bg-title {
-  font-size: 15rem;
+  font-size: 30vh;
   font-family: "Roboto", "Times New Roman";
   font-weight: 700;
   text-align: right;
-  color: rgb(255, 255, 255);
-  margin-right:5%;
-
-
-
+  color: $primary-color;
+  margin-right: 5%;
 }
 
 .bg-subtitle {
-  font-size: 8rem;
+  font-size: 15vh;
   font-family: "Roboto", "Times New Roman";
   font-weight: 700;
   text-align: right;
-  color: rgb(255, 255, 255);
+  color: $primary-color;
 }
+
+/* Products Page */
 
 .container {
   margin: 5%;
@@ -107,12 +120,57 @@ nav {
   text-align: center;
   color: #000000;
   font-weight: 600;
-  font-size:3vh;
-  font-family: 'Roboto', 'Times New Roman', Times, serif
+  font-size: 3vh;
+  font-family: "Roboto", "Times New Roman", Times, serif;
 }
 
 .product-price {
   text-align: center;
   color: #002fa7;
-  font-family: 'Roboto', 'Times New Roman', Times, serif
+  font-family: "Roboto", "Times New Roman", Times, serif;
+  font-size:3vh;
+}
+
+/* About */
+
+.bg-about {
+  margin: 5%;
+  background-color: #002fa7;
+  
+}
+
+.grid-about {
+  margin:5%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "ab . ."
+    "tx . pp"
+    "tx . pp";
+}
+
+.about-ab {
+  grid-area: ab;
+  font-size: 12vh;
+  font-weight: 700;
+  color:$primary-color;
+}
+
+.about-tx {
+  margin-top:5%;
+  grid-area: tx;
+  font-size: 3rem;
+  width:70%;
+  color:$primary-color;
+}
+
+.about-pp {
+  grid-area: pp;
+  background-image: url("./images/man-wearing-black-hat-and-black-coat-157675.jpg");
+  background-size: cover;
+  height:60vh;
+  width:20vw;
+  padding-right:10%;
+
 }

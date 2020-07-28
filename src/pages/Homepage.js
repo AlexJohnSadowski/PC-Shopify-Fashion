@@ -13,7 +13,7 @@ const Homepage = () => {
   return (
     <div className="bg-container">
         <div className="bg-img">
-            <div className="bg-title">P.</div>
+            <div className="bg-title">P<span className="dot">.</span></div>
             <div className="bg-subtitle">Stands for prestige.</div>
             
         </div>

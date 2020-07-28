@@ -11,7 +11,7 @@ const Navbar = () => {
             
             <Link to="/" className="logo">Patrice Cadet</Link>
             <Link to="/products" className="shop">products</Link>
-            <Anchor onClick={() => openCart()}><Icon name="Bag" size="5vh" color="black" /></Anchor>
+            <Link onClick={() => openCart()} className="shop">Cart</Link>
         </nav>
     )
 }
