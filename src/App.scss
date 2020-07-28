@@ -266,39 +266,6 @@ nav {
   50%, 100% { transform: translateY(0); }
 }
   
-  /* BG  */
-
-  .title {
-  position:absolute;
-  top:30%;
-  margin-left:15%;
-  font-size:72px;
-  font-weight:700;
-  font-family:'Nothing You Could Do'
-
-  }
-
-.subtitle {
-  position:absolute;
-  top:42%;
-  margin-left:15%;
-  font-size:36px;
-  font-weight:300;
-  font-family:'Special Elite', cursive;
-  color:black;
-  opacity:0.5;
-}
-
-@media(max-width:757px){
-  .title{
-    top:20%;
-    font-size:56px;
-  }
-  .subtitle {
-    top:45%;
-  }
-}
-
 /* BG Homepage */
 
 .bg-container {
@@ -322,7 +289,7 @@ nav {
 }
 
 .bg-subtitle {
-  font-size: 10vmax;
+  font-size: 9vmax;
   font-family: "Roboto", "Times New Roman";
   font-weight: 700;
   text-align: right;
