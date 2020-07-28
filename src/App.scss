@@ -2,25 +2,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
 
-$primary-color: rgb(241, 234, 234);
-$klein-blue-color: #002fa7;
-$dirty-red-color:rgb(241, 60, 60);
+
+:root {
+  --colour-primary: rgb(241, 60, 60);
+  --color-secondary: #F0F7EE;
+  --klein-blue-colour:#002fa7;
+  --duration: 1s;
+  --nav-duration: calc(var(--duration) / 2);
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --space: 2vh;
+  --font-primary: 'Roboto', sans-serif;
+  --font-heading: 'Roboto', serif;
+  --font-size: 1vh;
+  --line-height: 1.5;
+}
 
 html,
 body {
   box-sizing: border-box;
-  margin: 0;
-  background-color: $primary-color;
+  background-color: var(--color-secondary);
   font-family: 'Roboto', 'Times New Roman', Times, serif;
+  overflow-x: hidden;
+  margin:0;
 }
 
-a {
+a{
   text-decoration: none;
 }
+
+/* UNDERLINE */
 
 nav a {
   text-decoration: none;
-
   display: inline-block;
   position: relative;
 }
@@ -32,12 +45,13 @@ nav a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: $klein-blue-color;
+  background: var(--klein-blue-colour);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
 nav a:hover:after {
   width: 100%;
+  height:5%;
   left: 0;
 }
 
@@ -47,27 +61,242 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35vh, auto));
   justify-items: center;
-  padding: 1rem;
-  background-color: $primary-color;
+  padding: 4rem;
+  background-color: var(--color-secondary);
 }
 
 .logo {
   font-size: 5vh;
   font-family: "Nothing You Could Do", "Times New Roman";
-  color: $dirty-red-color;
+  color: var(--colour-primary);
   font-weight: 700;
 }
 
 .dot {
-  color: $dirty-red-color
+  color: var(--colour-primary)
 }
 
 .shop {
   font-size: 5vh;
-  font-family: "Finger Paint", "Times New Roman";
-  font-weight: 400;
-  color: $klein-blue-color;
+  font-family: "Finger Paint";
+  color: var(--klein-blue-colour);
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+/* Burger menu */
+
+
+.main-navigation-toggle {
+  position: fixed;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  
+  
+  + label {
+    position: fixed;
+    top: calc(var(--space) * 1.5);
+    right: calc(var(--space) * 1.5);
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    padding:1vh;
+    background: var(--color-secondary)
+  }
+}
+
+.icon--menu-toggle {
+  --size: calc(1rem + 4vmin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  stroke-width: 6;
+}
+
+.icon-group {
+  transform: translateX(0);
+  transition: transform var(--nav-duration) var(--ease);
+}
+
+.icon--menu {
+  stroke: var(--colour-primary);
+}
+
+.icon--close {
+  stroke: var(--colour-primary);
+  transform: translateX(-100%);
+}
+
+.main-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: transform var(--nav-duration);
+  z-index: 1;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    transform-origin: 0 50%;
+    z-index: -1;
+  }
+  
+  ul {
+    font-size: 10vmin;
+    font-family: var(--font-heading);
+    width: 100%;
+  }
+  
+  li {
+    padding-top:2%;
+    --border-size: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    font-family: 'Finger Paint';
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: var(--border-size);
+      background-color: var(--colour-primary);
+      transform-origin: 0 50%;
+      transform: translateX(-100%) skew(15deg);
+    }
+  }
+  
+  a {
+    display: inline-block;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--klein-blue-colour);
+    line-height: 1.5;
+    text-decoration: none;
+    user-select: none;
+    padding: var(--space) calc(var(--space) * 2) calc(var(--space) + var(--border-size) / 2);
+    transform: translateY(100%);
+  }
+}
+
+.main-content {
+  margin: 6rem auto;
+  max-width: 70ch;
+  padding: 0 calc(var(--space) * 2);
+  transform: translateX(0);
+  transition: transform calc(var(--nav-duration) * 2) var(--ease);
+  
+  > * + * {
+    margin-top: calc(var(--space) * var(--line-height));
+  }
+}
+
+.main-navigation-toggle:checked {
+  ~ label .icon--menu-toggle {    
+    .icon-group {
+      transform: translateX(100%);
+    }
+  }
+  
+  ~ .main-content {
+    transform: translateX(10%);
+  }
+  
+  ~ .main-navigation {
+    transition-duration: 0s;
+    transform: translateX(0);
+    
+    &:after {
+      animation: nav-bg var(--nav-duration) var(--ease) forwards;
+    }
+    
+    li:after {
+      animation: nav-line var(--duration) var(--ease) forwards;
+    }
+    
+    a {
+      animation: link-appear calc(var(--duration) * 1.5) var(--ease) forwards;
+    }
+    
+    @for $i from 1 through 4 {
+      li:nth-child(#{$i}) {
+        &:after, a {
+          animation-delay: calc((var(--duration) / 2) * #{$i} * 0.125);
+        }
+      }
+    }
+  }
+}
+
+@keyframes nav-bg {
+  from { transform: translateX(-100%) skewX(-15deg) }
+  to { transform: translateX(0) }
+}
+
+@keyframes nav-line {
+  0%   { transform: scaleX(0); transform-origin: 0 50%; }
+  35%  { transform: scaleX(1.001); transform-origin: 0 50%; }
+  65%  { transform: scaleX(1.001); transform-origin: 100% 50%; }
+  100% { transform: scaleX(0); transform-origin: 100% 50%; }
+}
+
+@keyframes link-appear {
+  0%, 25%   { transform: translateY(100%); }
+  50%, 100% { transform: translateY(0); }
+}
+  
+  /* BG  */
+
+  .title {
+  position:absolute;
+  top:30%;
+  margin-left:15%;
+  font-size:72px;
+  font-weight:700;
+  font-family:'Nothing You Could Do'
+
+  }
+
+.subtitle {
+  position:absolute;
+  top:42%;
+  margin-left:15%;
+  font-size:36px;
+  font-weight:300;
+  font-family:'Special Elite', cursive;
+  color:black;
+  opacity:0.5;
+}
+
+@media(max-width:757px){
+  .title{
+    top:20%;
+    font-size:56px;
+  }
+  .subtitle {
+    top:45%;
+  }
 }
 
 /* BG Homepage */
@@ -77,7 +306,7 @@ nav {
 }
 
 .bg-img {
-  background-color: $klein-blue-color;
+  background-color: var(--klein-blue-colour);
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -88,25 +317,26 @@ nav {
   font-family: "Roboto", "Times New Roman";
   font-weight: 700;
   text-align: right;
-  color: $primary-color;
+  color: var(--color-secondary);
   margin-right: 5%;
 }
 
 .bg-subtitle {
-  font-size: 15vh;
+  font-size: 10vmax;
   font-family: "Roboto", "Times New Roman";
   font-weight: 700;
   text-align: right;
-  color: $primary-color;
+  color: var(--color-secondary);
 }
 
 /* Products Page */
 
 .container {
-  margin: 5%;
+  margin: 0 5% 5% 5%;
 }
 
 .main-grid {
+  margin-top:5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35vh, auto));
   grid-gap: 3%;
@@ -136,6 +366,7 @@ nav {
 .bg-about {
   margin: 5%;
   background-color: #002fa7;
+  padding-bottom: 5%;
   
 }
 
@@ -148,29 +379,41 @@ nav {
     "ab . ."
     "tx . pp"
     "tx . pp";
+
+  @media (max-width:1024px) {
+    grid-template-areas:
+    "ab ."
+    "tx ."
+    "pp pp";
+  }
 }
 
 .about-ab {
   grid-area: ab;
   font-size: 12vh;
   font-weight: 700;
-  color:$primary-color;
+  color:var(--color-secondary);
 }
 
 .about-tx {
   margin-top:5%;
+  margin-right:5%;
   grid-area: tx;
-  font-size: 3rem;
-  width:70%;
-  color:$primary-color;
+  font-size: 4vh;
+  font-family: 'Times New Roman', Times, serif;
+  color:var(--color-secondary);
 }
 
 .about-pp {
   grid-area: pp;
   background-image: url("./images/man-wearing-black-hat-and-black-coat-157675.jpg");
   background-size: cover;
-  height:60vh;
-  width:20vw;
   padding-right:10%;
+  height:60vh;
+  @media (min-width:840px) {
+    width:40vh;
+  }
 
 }
+
+

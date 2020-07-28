@@ -6,7 +6,7 @@ import './App.scss'
 import Homepage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import Cart from './components/Cart'
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar/Navbar'
 import ProductsPage from './pages/ProductsPage'
 import About from './components/About'
 

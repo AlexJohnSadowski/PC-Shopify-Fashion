@@ -2,10 +2,12 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div className="bg-container bg-about">
+        <div className="bg-about">
             <div className="grid-about">
                 <div className="about-ab">About us<span className="dot">.</span></div>
-                <div className="about-tx">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div className="about-tx"><p>Founded in Paris in 2019, Patrice Cadet is one of the world's leading luxury fashion brands, with a renowned reputation for creativity, innovation and French craftsmanship. Patrice Cadet is part of the Ace S. Group, a world leader in apparel and accessories that owns a portfolio of powerful luxury and sport and lifestyle brands.</p>
+                <p>Patrice's collections are simple and minimalistic. His designs mixed the vision of the modern art and the semi-formal style of the Millenials' world.</p>
+                </div>
                 <div className="about-pp" />
             </div>
             
