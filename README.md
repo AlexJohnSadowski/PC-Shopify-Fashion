@@ -1,6 +1,6 @@
 # UNDER DEVELOPMENT
 ## Patrice Cadet. - Fashion Shop Project
-![Image of the website](https://i.ibb.co/1v3DjnW/Screenshot-2020-07-29-React-App-1.png)
+![Image of the website](https://i.ibb.co/SR3N7Gm/Screenshot-2020-07-29-React-App-2.png)
 
 
 E-commerce platform made with React and Storefront API from Shopify. I use context API for the state management.
