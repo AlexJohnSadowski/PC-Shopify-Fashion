@@ -33,7 +33,7 @@ const Burger = () => {
           </g>
         </svg>
       </label>
-      <nav className="main-navigation" onClick={() => hideMenu()}>
+      <div className="main-navigation" onClick={() => hideMenu()}>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -49,7 +49,7 @@ const Burger = () => {
             <Link onClick={() => openCart()}>Cart</Link>
           </li>
         </ul>
-      </nav>
+      </div>
     </>
   );
 };
