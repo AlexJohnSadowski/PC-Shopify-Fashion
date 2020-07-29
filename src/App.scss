@@ -451,18 +451,17 @@ main {
 
 .contact {
   margin-top:10%;
-  display:grid;
   grid-template-rows: 1fr;
 }
 
 .contact-title{
-  font-size:10vh;
+  font-size:5vh;
   text-align:center;
 }
 
 .contact-subtitle{
   margin-top:2%;
-  font-size:8vh;
+  font-size:3vh;
   text-align:center;
 }
 
@@ -474,4 +473,8 @@ main {
   color:var(--klein-blue-colour);
   text-transform: uppercase;
   text-align:center;
+  @media (max-width:800px) {
+    font-size:5vw;
+    
+  }
 }
