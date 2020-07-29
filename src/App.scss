@@ -5,7 +5,7 @@
 
 :root {
   --colour-primary: rgb(231, 43, 43);
-  --color-secondary: #F0F7EE;
+  --color-secondary: #ffffff;
   --klein-blue-colour:#002fa7;
   --duration: 1s;
   --nav-duration: calc(var(--duration) / 2);
@@ -61,15 +61,18 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35vh, auto));
   justify-items: center;
-  padding: 4rem;
+  padding: 2rem;
   background-color: var(--color-secondary);
 }
 
 .logo {
   font-size: 5vh;
-  font-family: "Nothing You Could Do", "Times New Roman";
+  font-family: "Roboto", "Times New Roman";
   color: var(--colour-primary);
   font-weight: 700;
+  @media (max-width: 375px) {
+    font-size:4vh;
+  }
 }
 
 .dot {
@@ -78,10 +81,14 @@ nav {
 
 .shop {
   font-size: 5vh;
-  font-family: "Finger Paint";
+  font-family: "Roboto";
+  font-weight:700;
   color: var(--klein-blue-colour);
   cursor: pointer;
   text-transform: uppercase;
+  @media (max-width:1024px) {
+    display:none;
+  }
 }
 
 
@@ -355,6 +362,10 @@ nav {
   }
 }
 
+.about-small {
+  font-size: 4vh
+}
+
 .about-ab {
   grid-area: ab;
   font-size: 12vh;
@@ -367,20 +378,100 @@ nav {
   margin-right:5%;
   grid-area: tx;
   font-size: 4vh;
-  font-family: 'Times New Roman', Times, serif;
+  font-weight:500;
+  font-family: 'Roboto';
   color:var(--color-secondary);
+
 }
 
 .about-pp {
-  grid-area: pp;
-  background-image: url("./images/man-wearing-black-hat-and-black-coat-157675.jpg");
-  background-size: cover;
-  padding-right:10%;
-  height:60vh;
-  @media (min-width:840px) {
-    width:40vh;
-  }
+}
 
+#myVideo {
+  grid-area: pp;
+  height:70vh;
+  max-width:100%;
+}
+
+/* Grid.js */
+
+main {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 3rem;
+  object-fit: cover;
+  
+}
+
+.col {
+  display: flex;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-top:30%;
 }
 
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+.column {
+  flex: 30%;
+  max-width: 33%;
+  padding: 0 5px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 95%;
+}
+
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Contact.js */
+
+.contact {
+  margin-top:10%;
+  display:grid;
+  grid-template-rows: 1fr;
+}
+
+.contact-title{
+  font-size:10vh;
+  text-align:center;
+}
+
+.contact-subtitle{
+  margin-top:2%;
+  font-size:8vh;
+  text-align:center;
+}
+
+.contact-email {
+  margin-top:5%;
+  margin-bottom:10%;
+  font-size:8vh;
+  font-family:'Finger Paint';
+  color:var(--klein-blue-colour);
+  text-transform: uppercase;
+  text-align:center;
+}
