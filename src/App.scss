@@ -30,7 +30,7 @@ a{
   text-decoration: none;
 }
 
-/* UNDERLINE */
+/* Underline styling for navbar */
 
 nav a {
   text-decoration: none;
@@ -55,7 +55,7 @@ nav a:hover:after {
   left: 0;
 }
 
-/* NAVBAR */
+/* NAVBAR + Visible Nav */
 
 nav {
   display: grid;
@@ -92,7 +92,7 @@ nav {
 }
 
 
-/* Burger menu */
+/* BURGER.JS */
 
 
 .main-navigation-toggle {
@@ -273,7 +273,7 @@ nav {
   50%, 100% { transform: translateY(0); }
 }
   
-/* BG Homepage */
+/* HomePage.js */
 
 .bg-container {
   height: 90vh;
@@ -303,7 +303,7 @@ nav {
   color: var(--color-secondary);
 }
 
-/* Products Page */
+/* ProductsPage.js */
 
 .container {
   margin: 0 5% 5% 5%;
@@ -312,7 +312,7 @@ nav {
 .main-grid {
   margin-top:5%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35vh, auto));
+  grid-template-columns: repeat(auto-fit, minmax(75vh, auto));
   grid-gap: 3%;
 }
 
@@ -335,7 +335,7 @@ nav {
   font-size:3vh;
 }
 
-/* About */
+/* About.js */
 
 .bg-about {
   margin: 5%;
