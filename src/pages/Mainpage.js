@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { ShopContext } from "../context/shopContext";
 
 
-const Homepage = () => {
+const Mainpage = () => {
   const { fetchAllProducts, products } = useContext(ShopContext);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Mainpage;

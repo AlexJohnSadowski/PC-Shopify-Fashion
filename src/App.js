@@ -3,7 +3,7 @@ import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import './App.scss'
 
-import Homepage from "./pages/HomePage";
+import Mainpage from "./pages/Mainpage";
 import ProductPage from "./pages/ProductPage";
 import Cart from './components/Cart'
 import Navbar from './components/Navbar/Navbar'
@@ -31,7 +31,7 @@ function App() {
           <Cart />
           <Switch>
           <Route exact path="/">
-              <Homepage />
+              <Mainpage />
               <About />
               <Grid />
               <Contact />
