@@ -15,4 +15,4 @@ Now I only need to add GSAP for some snazy animations;)
 
 YEAH, IM DOING THAT FOR YOU D-----e!
 
-[Image of the website](https://i.ibb.co/pJhPn7S/Screenshot-2020-07-29-React-App.jpg)
+[Initial project of the website](https://i.ibb.co/pJhPn7S/Screenshot-2020-07-29-React-App.jpg)
