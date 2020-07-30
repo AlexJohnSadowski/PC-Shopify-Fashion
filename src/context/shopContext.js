@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Client from "shopify-buy";
+require('dotenv').config()
 
 const ShopContext = React.createContext();
 
 const client = Client.buildClient({
-  storefrontAccessToken: "4fa429e286eadf6c966eb7a7a6938ede",
+  storefrontAccessToken: '4fa429e286eadf6c966eb7a7a6938ede',
   domain: "reactprojectdiv.myshopify.com/",
 });
 
