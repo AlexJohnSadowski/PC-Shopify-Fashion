@@ -4,7 +4,7 @@ import { ShopContext } from '../context/shopContext'
 
 const Cart = () => {
 
-    const { isCartOpen, closeCart, checkout } = useContext(ShopContext)
+    const { isCartOpen, closeCart, checkout, removeItemFromCheckout, product } = useContext(ShopContext)
 
     if (checkout.lineItems) {
         return (
@@ -34,7 +34,9 @@ const Cart = () => {
                                         <Col>
                                             <Text>{item.variant.price}</Text>
                                         </Col>
+                                        <Button rounded="0" shadow="3" bg="#002fa7" m={{ y: '2rem' }} onClick={() => removeItemFromCheckout(item.id)}>X</Button>
                                     </Row>
+                                     
                                 ))}
                             </>
                         }
