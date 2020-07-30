@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/shopContext'
 import { Text, Div, Button, Row, Col, Container } from 'atomize'
+import Loading from '../components/Loading'
 
 const ProductPage = () => {
     let { id } = useParams()
@@ -21,7 +22,7 @@ const ProductPage = () => {
         };
     }, [ fetchProductWithId, id])
 
-    if (!product.title) return <div>loading...</div>
+    if (!product.title) return <Loading />
     return (
         <Container>
             <Row m={{ b: "2rem" }} p="2rem">

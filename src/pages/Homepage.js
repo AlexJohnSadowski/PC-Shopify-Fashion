@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ShopContext } from "../context/shopContext";
 
+
 const Homepage = () => {
   const { fetchAllProducts, products } = useContext(ShopContext);
 
@@ -8,6 +9,7 @@ const Homepage = () => {
     fetchAllProducts();
     return () => {};
   }, [fetchAllProducts]);
+
 
   if (!products) return <div>loading</div>;
   return (
