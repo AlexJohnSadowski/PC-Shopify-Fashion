@@ -1,43 +1,44 @@
-import React, { useEffect, useContext } from 'react'
-import { useParams } from 'react-router-dom'
-import { ShopContext } from '../context/shopContext'
-import { Text, Div, Button, Row, Col, Container } from 'atomize'
-import Loading from '../components/Loading'
+import React, { useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ShopContext } from "../context/shopContext";
+import { Text, Div, Button, Row, Col, Container } from "atomize";
+import Loading from "../components/Loading";
 
 const ProductPage = () => {
-    let { id } = useParams()
-    const { fetchProductWithId, addItemToCheckout, product } = useContext(ShopContext)
-    // const [product, setProduct] = useState(null)
-    // async function fetchData() {
-    //     const fetchedProduct = await fetchProductWithId(id)
-    //     setProduct(fetchedProduct)
-    // }
+  let { id } = useParams();
+  const { fetchProductWithId, addItemToCheckout, product } = useContext(
+    ShopContext
+  );
+  // const [product, setProduct] = useState(null)
+  // async function fetchData() {
+  //     const fetchedProduct = await fetchProductWithId(id)
+  //     setProduct(fetchedProduct)
+  // }
 
-    useEffect(() => {
-        fetchProductWithId(id)
-        
-        // fetchData()
-        return () => {
-            // setProduct(null)
-        };
-    }, [ fetchProductWithId, id])
+  useEffect(() => {
+    fetchProductWithId(id);
 
-    if (!product.title) return <Loading />
-    return (
-        <Container>
-            <Row m={{ b: "2rem" }} p="2rem">
-                <Col>
-                    <Div bgImg={product.images[0].src} shadow="3" bgSize="cover" w="100%" bgPos="center center" h="40rem"/>
-                </Col>
-                <Col>
-                    <Text tag="h1" textColor="#002fa7" textWeight="200" m={{ y: '2rem' }}>{product.title}</Text>
-                    <Text tag="h3" m={{ y: '2rem' }} textColor="#002fa7" textWeight="200">${product.variants[0].price}</Text>
-                    <Text tag="p" textSize="1rem" textColor="#002fa7" textWeight="200">{product.description}</Text>
-                    <Button rounded="0" shadow="3" bg="#002fa7" m={{ y: '2rem' }} onClick={() => addItemToCheckout(product.variants[0].id, 1)}>Add To Cart</Button>
-                </Col>
-            </Row>
-        </Container>
-    )
-}
+    // fetchData()
+    return () => {
+      // setProduct(null)
+    };
+  }, [fetchProductWithId, id]);
 
-export default ProductPage
+  if (!product.title) return <Loading />;
+  return (
+      <div className="product-grid">
+        <div className="details-image"><img src={product.images[0].src} /></div>
+        <div className="details-title">{product.title}</div>
+        <div className="details-price">{product.variants[0].price}PLN</div>
+        <div className="details-descr">{product.description}</div>
+        <button
+          className="blue-button"
+          onClick={() => addItemToCheckout(product.variants[0].id, 1)}
+        >
+          Add To Cart
+        </button>
+      </div>
+  );
+};
+
+export default ProductPage;

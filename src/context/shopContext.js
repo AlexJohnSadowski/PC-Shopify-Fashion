@@ -85,7 +85,7 @@ class ShopProvider extends Component {
     fetchProductWithId = async (id) => {
       const product = await client.product.fetch(id);
       this.setState({ product: product });
-      console.log(JSON.stringify(product));
+      // console.log(JSON.stringify(product));
   
       return product;
     };
