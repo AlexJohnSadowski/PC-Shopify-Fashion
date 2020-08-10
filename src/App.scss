@@ -312,9 +312,10 @@ nav {
 .main-grid {
   margin-top:5%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(75vh, auto));
+  grid-template-columns: repeat(auto-fit, minmax(45vh, 4fr));
   grid-gap: 3%;
 }
+
 
 .product-image img {
   width: 100%;
