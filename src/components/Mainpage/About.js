@@ -1,7 +1,21 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import video from "../video/video1.mp4";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const About = () => {
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    gsap.fromTo('.about-ab', {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: '.about-ab', markers: true, start: 'top 60%'}})
+    gsap.fromTo('.about-tx', {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: '.about-tx', markers: true, start: 'top 50%'}})
+    gsap.fromTo('#myVideo', {x:100, opacity:0}, {duration: 2, x:0, opacity: 1, scrollTrigger: {trigger: '.about-tx', markers: true, start: 'top 50%'}})
+    gsap.fromTo('.bg-about', {y:100, opacity:0}, {duration: 2, y:0, opacity: 1, scrollTrigger: {trigger: '.bg-about', markers: true, start: 'top 80%'}})
+
+  });
+
   return (
     <div className="bg-about">
       <div className="grid-about">

@@ -438,8 +438,9 @@ nav {
 
 .bg-about {
   margin: 5%;
-  background-color: #002fa7;
+  background-color: #fff;
   padding-bottom: 5%;
+  border-left: 1vh var(--colour-primary) solid;
 }
 
 .grid-about {
@@ -468,7 +469,7 @@ nav {
   grid-area: ab;
   font-size: 12vh;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--klein-blue-colour);
 }
 
 .about-tx {
@@ -476,9 +477,9 @@ nav {
   margin-right: 5%;
   grid-area: tx;
   font-size: 4vh;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Roboto";
-  color: var(--color-secondary);
+  color: var(--klein-blue-colour);
 }
 
 #myVideo {

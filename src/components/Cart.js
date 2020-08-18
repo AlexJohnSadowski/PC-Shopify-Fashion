@@ -4,7 +4,7 @@ import { ShopContext } from '../context/shopContext'
 
 const Cart = () => {
 
-    const { isCartOpen, closeCart, checkout, removeItemFromCheckout, product } = useContext(ShopContext)
+    const { isCartOpen, closeCart, checkout, removeItemFromCheckout } = useContext(ShopContext)
 
     if (checkout.lineItems) {
         return (

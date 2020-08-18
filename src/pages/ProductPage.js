@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/shopContext";
-import { Text, Div, Button, Row, Col, Container } from "atomize";
 import Loading from "../components/Loading";
 
 const ProductPage = () => {

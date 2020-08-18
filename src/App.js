@@ -8,9 +8,7 @@ import ProductPage from "./pages/ProductPage";
 import Cart from './components/Cart'
 import Navbar from './components/Navbar/Navbar'
 import ProductsPage from './pages/ProductsPage'
-import About from './components/Homepage/About'
-import Grid from './components/Homepage/Grid'
-import Contact from './components/Homepage/Contact'
+
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -32,9 +30,6 @@ function App() {
           <Switch>
           <Route exact path="/">
               <Mainpage />
-              <About />
-              <Grid />
-              <Contact />
             </Route>
             <Route path="/products">
               <ProductsPage />

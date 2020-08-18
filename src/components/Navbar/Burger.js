@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../context/shopContext";
 
@@ -18,7 +18,7 @@ const Burger = () => {
         className="main-navigation-toggle"
         type="checkbox"
       />
-      <label for="page-nav-toggle">
+      <label htmlFor="page-nav-toggle">
         <svg className="icon--menu-toggle" viewBox="0 0 60 30">
           <g className="icon-group">
             <g className="icon--menu">
