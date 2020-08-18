@@ -9,10 +9,10 @@ const About = () => {
     gsap.registerPlugin(ScrollTrigger);
 
 
-    gsap.fromTo('.about-ab', {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: '.about-ab', markers: true, start: 'top 60%'}})
-    gsap.fromTo('.about-tx', {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: '.about-tx', markers: true, start: 'top 50%'}})
-    gsap.fromTo('#myVideo', {x:100, opacity:0}, {duration: 2, x:0, opacity: 1, scrollTrigger: {trigger: '.about-tx', markers: true, start: 'top 50%'}})
-    gsap.fromTo('.bg-about', {y:100, opacity:0}, {duration: 2, y:0, opacity: 1, scrollTrigger: {trigger: '.bg-about', markers: true, start: 'top 80%'}})
+    gsap.fromTo('.about-ab', {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: '.about-ab', markers: false, start: 'top 60%'}})
+    gsap.fromTo('.about-tx', {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: '.about-tx', markers: false, start: 'top 50%'}})
+    gsap.fromTo('#myVideo', {x:100, opacity:0}, {duration: 2, x:0, opacity: 1, scrollTrigger: {trigger: '.about-tx', markers: false, start: 'top 50%'}})
+    gsap.fromTo('.bg-about', {y:100, opacity:0}, {duration: 2, y:0, opacity: 1, scrollTrigger: {trigger: '.bg-about', markers: false, start: 'top 80%'}})
 
   });
 

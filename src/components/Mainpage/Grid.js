@@ -15,15 +15,15 @@ const Grid = () => {
 
     
 
-    gsap.fromTo('#six', {opacity:0, x:-100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#six', markers: true, start: 'top 60%'}})
-    gsap.fromTo('#five', {opacity:0, x:-100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#five', markers: true, start: 'top 50%'}})
-    gsap.fromTo('#eight', {opacity:0, x:-100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#eight', markers: true, start: 'top 80%'}})
+    gsap.fromTo('#six', {opacity:0, x:-100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#six', markers: false, start: 'top 60%'}})
+    gsap.fromTo('#five', {opacity:0, x:-100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#five', markers: false, start: 'top 50%'}})
+    gsap.fromTo('#eight', {opacity:0, x:-100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#eight', markers: false, start: 'top 80%'}})
 
-    gsap.fromTo('#three', {opacity:0, y:-100}, {duration: 2, y:0, opacity:1, scrollTrigger: {trigger: '#three', markers: true, start: 'top 80%'}})
-    gsap.fromTo('#four', {opacity:0, y:100}, {duration: 2, y:0, opacity:1, scrollTrigger: {trigger: '#four', markers: true, start: 'top 80%'}})
+    gsap.fromTo('#three', {opacity:0, y:-100}, {duration: 2, y:0, opacity:1, scrollTrigger: {trigger: '#three', markers: false, start: 'top 80%'}})
+    gsap.fromTo('#four', {opacity:0, y:100}, {duration: 2, y:0, opacity:1, scrollTrigger: {trigger: '#four', markers: false, start: 'top 80%'}})
 
-    gsap.fromTo('#seven', {opacity:0, x:100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#seven', markers: true, start: 'top 80%'}})
-    gsap.fromTo('#two', {opacity:0, x:100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#two', markers: true, start: 'top 60%'}})
+    gsap.fromTo('#seven', {opacity:0, x:100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#seven', markers: false, start: 'top 80%'}})
+    gsap.fromTo('#two', {opacity:0, x:100}, {duration: 2, x:0, opacity:1, scrollTrigger: {trigger: '#two', markers: false, start: 'top 60%'}})
 
     
 
