@@ -7,9 +7,9 @@ const Contact = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(".contact-title", {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: ".contact-title", markers: false, start: 'top 60%'}})
-    gsap.fromTo(".contact-subtitle", {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: ".contact-title", markers: false, start: 'top 60%'}})
-    gsap.fromTo(".contact-email", { duration: 3, y:100, opacity:0}, {duration: 4, y:0, opacity:1, scrollTrigger: {trigger: ".contact-title", markers: false, start: 'top 60%'}})
+    gsap.fromTo(".contact-title", {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: ".contact-title", markers: false, start: 'top 80%'}})
+    gsap.fromTo(".contact-subtitle", {opacity:0}, {duration: 2, opacity:1, scrollTrigger: {trigger: ".contact-title", markers: false, start: 'top 80%'}})
+    gsap.fromTo(".contact-email", { duration: 3, y:100, opacity:0}, {duration: 4, y:0, opacity:1, scrollTrigger: {trigger: ".contact-title", markers: false, start: 'top 80%'}})
 
 
   })
