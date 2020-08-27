@@ -542,6 +542,7 @@ main {
 .contact {
   margin-top: 10%;
   grid-template-rows: 1fr;
+  overflow-y:hidden;
 }
 
 .contact-title {
